@@ -1,14 +1,33 @@
-# Notes Application for DevOps Enthusiasts
+# Simple Notes App ( Dockerized Deployment Project)
 
-The Notes Application is containerized using Docker and deployed on an AWS EC2 instance. Nginx is used as a reverse proxy to expose the application.
+This project is a containerized full-stack Notes Application designed to demonstrate practical deployment skills using Docker and Nginx on a cloud virtual machine.The application runs as a multi-service system and is accessible through a reverse proxy setup, simulating a real-world production deployment environment.
 
-## Requirements
+## System Architecture
 
-- Python 3.9
-- Node.js
-- React
+The application consists of the following components:
 
-## Installation
+- Frontend (React)
+- Backend Service (Python-based API)- 3.9 version
+- Reverse Proxy (Nginx)
+- Docker-based container runtime environment
+- AWS EC2 instance for deployment
+
+### Request Flow
+
+Client → Nginx → Application Service → Backend API
+
+---
+
+## Prerequisites
+
+Before running the project, ensure the following are installed:
+
+- Docker
+- Docker Compose
+- Git
+- AWS EC2 instance (for deployment use-case)
+
+## Setup Instructions: 
 
 ### 1. Clone the Repository
 
@@ -22,13 +41,25 @@ git clone https://github.com/Aayusha-Regmi/notes-application.git
 docker build -t notes-app .
 ```
 
-### 3. Run the Application
+### 3. Run the Application in the background 
 
 ```bash
-docker run -d -p 8000:8000 notes-app:latest
+docker compose up -d 
 ```
 
-## Nginx
+### 4. Verify running containers
+
+```bash
+docker ps
+```
+
+### 5. Check the logs
+
+```bash
+docker logs <container_id>
+```
+
+## Nginx Setup (Reverse Proxy)
 
 Install Nginx and configure it as a reverse proxy to make the application accessible.
 
@@ -36,3 +67,25 @@ Install Nginx and configure it as a reverse proxy to make the application access
 sudo apt-get update
 sudo apt install nginx
 ```
+
+### Basic Configuration file
+
+The configuration file contains basic nginx setup named as default.conf
+
+```bash
+sudo nano /etc/nginx/sites-available/default
+```
+
+### Restart the Nginx
+
+```bash
+sudo systemctl restart nginx
+```
+
+## Access the application
+
+1. Open browser
+2. Visit
+   ```
+   http://<EC2_PUBLIC_IP>
+   ```
