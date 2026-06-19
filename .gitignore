@@ -3,6 +3,12 @@
 # ignore .vscode folder
 .vscode
 
+
+# OS / editor files
+*.swp
+*.swo
+*~
+
 # dependencies
 /node_modules
 /.pnp
