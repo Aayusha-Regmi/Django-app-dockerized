@@ -34,8 +34,7 @@ services:
 
 
   django-app:
-    build:
-      context: .
+    image: notes-app-backend:latest
     container_name: django-app
     env_file: ".env"
     ports: 
