@@ -84,14 +84,15 @@ sudo systemctl restart nginx
 
 ## Access the application
 
+1. Open browser
+2. Visit
+   ```
+    http://<EC2_PUBLIC_IP>
+   ```
+
 ## Configure Pipeline
  Step 1: Go to JenkinsFile
  Step 2: Make changes
  Step 3: Commit changes 
  Auto build takes place at jenkins server.
-
-1. Open browser
-2. Visit
-   ```
-   http://<EC2_PUBLIC_IP>
-   ```
+  
