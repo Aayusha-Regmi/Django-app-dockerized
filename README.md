@@ -91,8 +91,12 @@ sudo systemctl restart nginx
    ```
 
 ## Configure Pipeline
- Step 1: Go to JenkinsFile /
- Step 2: Make changes /
- Step 3: Commit changes /
+
+ Step 1: Go to JenkinsFile  
+ 
+ Step 2: Make changes  
+ 
+ Step 3: Commit changes  
+ 
  Auto build takes place at jenkins server.
   
